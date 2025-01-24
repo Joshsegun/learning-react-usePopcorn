@@ -298,6 +298,7 @@ body {
   border-radius: 10rem;
   font-size: 1.4rem;
   padding: 1rem;
+  text-align: center;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s;
