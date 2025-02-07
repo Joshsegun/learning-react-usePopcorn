@@ -31,6 +31,11 @@ export default function MovieDetails({
     Genre: genre,
   } = movie;
 
+  const isTop = imdbRating > 8;
+  console.log(isTop);
+
+  // const [avgRating, setAvgRating] = useState(0)
+
   function handleAdd() {
     const newWatchedMovie = {
       imdbID: selectedId,
@@ -44,6 +49,9 @@ export default function MovieDetails({
 
     onAddWatched(newWatchedMovie);
     onCloseMovie();
+
+    // setAvgRating(Number(imdbRating));
+    // setAvgRating((avgRating) => (avgRating + userRating) / 2);
   }
 
   useEffect(
@@ -116,6 +124,8 @@ export default function MovieDetails({
             </div>
           </header>
 
+          {/* <p>{avgRating}</p> */}
+
           <section>
             <div className="rating">
               {!isWatched ? (
@@ -126,9 +136,9 @@ export default function MovieDetails({
                     onSetRating={setUserRating}
                   />
                   {userRating > 0 && (
-                    <buttton className="btn-add" onClick={handleAdd}>
+                    <button className="btn-add" onClick={handleAdd}>
                       Add to list
-                    </buttton>
+                    </button>
                   )}
                 </>
               ) : (
